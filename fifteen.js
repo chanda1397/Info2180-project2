@@ -23,7 +23,7 @@ window.onload = function(){
             if (canMove(parseInt(this.innerHTML)))
 				
             {
-				var colour = getRandomColor();
+		var colour = getRandomColor();
                 this.style.border = "4px solid red";
                 this.style.color = colour;
             }
@@ -39,10 +39,7 @@ window.onload = function(){
             if (canMove(parseInt(this.innerHTML)))
             {
                 swap(this.innerHTML-1);
-                if (isSolved())
-                {
-                   alert('Congrats you win');
-                }
+                
                 
             }
         };
@@ -127,21 +124,7 @@ function canMove(position)
 
 
 
-function isSolved()
-{
-    var solved = true;
-    for (var i = 0; i < tiles.length; i++) {
-        var y = parseInt(tiles[i].style.top);
-        var x = parseInt(tiles[i].style.left);
 
-        if (x != (i%4*100) || y != parseInt(i/4)*100)
-        {
-            solved = false;
-            break;
-        }
-    }
-    return solved;
-}
 
 function calcLeft(x, y)
 {
